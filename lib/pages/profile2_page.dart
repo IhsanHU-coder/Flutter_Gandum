@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_dart_1/controllers/login_controller.dart';
+import 'package:project_dart_1/controllers/splashscreen_controller.dart';
+import 'package:project_dart_1/widgets/widget_button.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class Profile2Page extends StatelessWidget {
+  Profile2Page({super.key});
+
+  final controller = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +42,9 @@ class ProfilePage extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+            CustomButton(text: "Logout", textColour: Colors.red, onPressed: (){
+              controller.logout();
+            })
           ],
         ),
       ),

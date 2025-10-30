@@ -7,7 +7,7 @@ import 'package:project_dart_1/pages/Widescreen/example_widescreen.dart';
 class ExamplePage extends StatelessWidget {
   ExamplePage({super.key});
 
-  final controller = Get.find<ExampleController>();
+  final ExampleController controller = Get.find<ExampleController>();
 
   @override
   Widget build(BuildContext context) {

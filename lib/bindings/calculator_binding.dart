@@ -7,8 +7,6 @@ class CalculatorBinding extends Bindings{
 
   @override
   void dependencies() {
-    // TODO: implement dependencies
-    //Get.put(CalculatorController());
     Get.lazyPut<CalculatorController>(()=>CalculatorController());
     Get.lazyPut<FootballController>(()=>FootballController());
     Get.lazyPut<FootballEditController>(()=>FootballEditController());

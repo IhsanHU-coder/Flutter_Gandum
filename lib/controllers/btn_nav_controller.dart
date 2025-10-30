@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class BtnNavController extends GetxController {
   // index bottom nav
   var currentIndex = 0.obs;
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/calculator_controller.dart';
 import 'package:project_dart_1/controllers/football_edit_controller.dart';
 
 class FootballEditPages extends StatelessWidget {

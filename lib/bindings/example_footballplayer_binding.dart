@@ -4,7 +4,6 @@ import 'package:project_dart_1/controllers/example_footballplayer_controller.dar
 class ExampleFootballplayerBinding extends Bindings{
   @override
   void dependencies() {
-    // TODO: implement dependencies
     Get.lazyPut<ExampleFootballplayerController>(()=>ExampleFootballplayerController());
   }
 }

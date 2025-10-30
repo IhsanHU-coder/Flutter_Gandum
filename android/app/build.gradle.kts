@@ -3,7 +3,11 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+
+    // 👇 Add this for Firebase
+    id("com.google.gms.google-services")
 }
+
 
 android {
     namespace = "com.example.project_dart_1"
@@ -41,4 +45,9 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Firebase Messaging SDK
+    implementation("com.google.firebase:firebase-messaging:24.1.0")
 }

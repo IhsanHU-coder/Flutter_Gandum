@@ -2,19 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_dart_1/Routes/pages.dart';
 import 'package:project_dart_1/Routes/routes.dart';
-import 'package:project_dart_1/controllers/contact_controller.dart';
-import 'package:project_dart_1/controllers/example_controller.dart';
-import 'package:project_dart_1/controllers/football_controller.dart';
-import 'package:project_dart_1/controllers/login_controller.dart';
-import 'package:project_dart_1/controllers/splashscreen_controller.dart';
-import 'package:project_dart_1/pages/calculator_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
-void main() {
-  Get.put(LoginController()); // ini global, bisa diakses Get.find di manapun
-  Get.put(SplashscreenController());
-  Get.put(ContactController());
-  Get.put(FootballController());
-  Get.put(ExampleController());
+// Background message handler
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  print("🔔 Background message: ${message.messageId}");
+}
+
+// void main() {
+
+//   runApp(const MyApp());
+// }
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  // Set background handler
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
   runApp(const MyApp());
 }
 
@@ -46,7 +54,7 @@ class MyApp extends StatelessWidget {
       ),
       //initialRoute: AppRoutes.mainmenu,
       //initialRoute: AppRoutes.splashScreen,
-      initialRoute: AppRoutes.examplescreen,
+      initialRoute: AppRoutes.splashScreen,
       getPages: AppPages.pages,
     );
   }

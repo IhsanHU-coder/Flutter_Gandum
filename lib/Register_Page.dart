@@ -33,14 +33,14 @@ class _RegisterPageState extends State<RegisterPage> {
             style: TextStyle(fontSize: 18,color: Colors.blueGrey, fontWeight: FontWeight.bold),),
             Text("Please Register using your username and password."),
             //image dari resources
-            SizedBox(height: 10),
-            Center(
-              child: Image.asset(
-                'assets/gambar.png',
-                width: 100,
-                height: 100,
-              ),
-            ),
+            //SizedBox(height: 10),
+            // Center(
+            //   child: Image.asset(
+            //     'assets/gambar.png',
+            //     width: 100,
+            //     height: 100,
+            //   ),
+            // ),
             //buatlah isian username dan password
             
             Container(

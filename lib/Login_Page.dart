@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_dart_1/Register_Page.dart';
-import 'package:project_dart_1/pages/HomePage.dart';
+import 'package:project_dart_1/pages/btn_nav_page.dart';
 import 'package:project_dart_1/widgets/widget_button.dart';
 import 'package:project_dart_1/widgets/widget_textfield.dart';
 
@@ -30,14 +30,14 @@ class _LoginPageState extends State<LoginPage> {
             style: TextStyle(fontSize: 18,color: Colors.blueGrey, fontWeight: FontWeight.bold),),
             Text("Please login using your username and password."),
             //image dari resources
-            SizedBox(height: 10),
-            Center(
-              child: Image.asset(
-                'assets/gambar.png',
-                width: 200,
-                height: 200,
-              ),
-            ),
+            // SizedBox(height: 10),
+            // Center(
+            //   child: Image.asset(
+            //     'assets/gambar.png',
+            //     width: 200,
+            //     height: 200,
+            //   ),
+            // ),
             // //buatlah isian username dan password
             // Container(
             //   margin: EdgeInsets.only(top: 20, bottom: 10),
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                       });
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => BtnNavPage()),
                         );
                     }else{
                       ScaffoldMessenger.of(context).showSnackBar(
