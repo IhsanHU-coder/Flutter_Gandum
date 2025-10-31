@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_dart_1/controllers/btn_nav_controller.dart';
+import 'package:project_dart_1/controllers/login_api_controller.dart';
 import 'package:project_dart_1/pages/calculator_page.dart';
 import 'package:project_dart_1/pages/contact_page.dart';
 import 'package:project_dart_1/pages/football_pages.dart';
@@ -12,6 +13,7 @@ class BtnNavPage extends StatelessWidget {
   BtnNavPage({super.key});
 
   final BtnNavController controller = Get.find<BtnNavController>();
+  final LoginApiController loginapicontroller = Get.find<LoginApiController>();
 
   final List<Widget> pages = [
     CalculatorPage(),
@@ -87,6 +89,16 @@ class BtnNavPage extends StatelessWidget {
                   onTap: () {
                     controller.changeTab(5);
                     Get.back();
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.logout, color: Colors.red),
+                  title: const Text(
+                    "Logout",
+                    style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                  ),
+                  onTap: () {
+                    loginapicontroller.logout();
                   },
                 ),
               ],

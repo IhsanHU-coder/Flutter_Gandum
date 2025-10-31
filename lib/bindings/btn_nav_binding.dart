@@ -3,6 +3,7 @@ import 'package:project_dart_1/controllers/btn_nav_controller.dart';
 import 'package:project_dart_1/controllers/calculator_controller.dart';
 import 'package:project_dart_1/controllers/contact_controller.dart';
 import 'package:project_dart_1/controllers/football_controller.dart';
+import 'package:project_dart_1/controllers/login_api_controller.dart';
 import 'package:project_dart_1/controllers/profile_controller.dart';
 import 'package:project_dart_1/controllers/login_controller.dart';
 import 'package:project_dart_1/controllers/example_controller.dart';
@@ -13,6 +14,8 @@ class BottomNavPageBinding extends Bindings {
   void dependencies() {
     //Get.put<BtnNavController>(BtnNavController());
     Get.lazyPut<BtnNavController>(()=>BtnNavController());
+    Get.lazyPut<LoginApiController>(()=>LoginApiController());
+
 
     // Semua controller yang dipakai di bawah BtnNavPage
     Get.lazyPut<CalculatorController>(() => CalculatorController());

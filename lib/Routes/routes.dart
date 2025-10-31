@@ -13,6 +13,7 @@ class AppRoutes{
   static const String examplefootballplayers = "/examplefootballplayers";
   static const String loginapi = "/loginapi";
   static const String btnNav = "/btnNav";
+  static const String notification = "/notification";
 
   //others here
 }

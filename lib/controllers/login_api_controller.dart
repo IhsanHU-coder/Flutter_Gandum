@@ -13,12 +13,12 @@ class LoginApiController extends GetxController {
   
   var isLoading = false.obs;
 
-  @override
-  void onClose() {
-    usernameController.dispose();
-    passwordController.dispose();
-    super.onClose();
-  }
+  // @override
+  // void onClose() {
+  //   usernameController.dispose();
+  //   passwordController.dispose();
+  //   super.onClose();
+  // }
 
   void loginApi() async {
     print('\n========================================');
@@ -37,6 +37,7 @@ class LoginApiController extends GetxController {
       );
       return;
     }
+    
 
     print('✅ Validation Passed');
     print('📝 Username: ${usernameController.text}');
@@ -108,14 +109,6 @@ class LoginApiController extends GetxController {
             print('💾 Token saved to SharedPreferences');
             print('💾 Username saved to SharedPreferences');
 
-            Get.snackbar(
-              "BERHASIL",
-              loginModel.message,
-              snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Colors.green[100],
-              colorText: Colors.black,
-            );
-
             isLoading.value = false;
             
             print('🔄 Navigating to: ${AppRoutes.btnNav}');
@@ -125,6 +118,17 @@ class LoginApiController extends GetxController {
             
             // Navigate ke halaman utama
             Get.offAllNamed(AppRoutes.btnNav);
+
+            Get.snackbar(
+              "BERHASIL",
+              loginModel.message,
+              snackPosition: SnackPosition.BOTTOM,
+              backgroundColor: Colors.green[100],
+              colorText: Colors.black,
+            );
+
+            
+            await Future.delayed(const Duration(milliseconds: 5000));
           } else {
             print('❌ Login Status: FAILED');
             print('📝 Reason: ${loginModel.message}');
@@ -196,6 +200,41 @@ class LoginApiController extends GetxController {
       print('========================================');
       print('❌ LOGIN API FAILED - EXCEPTION');
       print('========================================\n');
-    }
+    }   
+
+  }
+
+  void logout() async {
+    print('\n========================================');
+    print('🚪 LOGOUT STARTED');
+    print('========================================');
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear(); // Hapus semua data login (username, token, dll)
+
+    Get.delete<LoginApiController>(force: true);
+    usernameController.clear();
+    passwordController.clear();
+
+    print('🧹 SharedPreferences cleared');
+    print('🔁 Redirecting to LoginApiPage...');
+
+    Get.offAllNamed(AppRoutes.loginapi); 
+
+    Get.snackbar(
+      "LOGOUT",
+      "Berhasil keluar dari akun",
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.orange[100],
+      colorText: Colors.black,
+    );
+
+    await Future.delayed(const Duration(milliseconds: 5000));
+
+    // Kembali ke halaman login
+
+
+    print('✅ LOGOUT COMPLETED');
+    print('========================================\n');
   }
 }

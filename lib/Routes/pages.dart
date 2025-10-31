@@ -5,6 +5,7 @@ import 'package:project_dart_1/bindings/splashscreen_binding.dart';
 import 'package:project_dart_1/pages/btn_nav_page.dart';
 import 'package:project_dart_1/pages/login_api_page.dart';
 import 'package:project_dart_1/pages/calculator_page.dart';
+import 'package:project_dart_1/pages/notification_page.dart';
 import 'package:project_dart_1/pages/profile2_page.dart';
 import 'package:project_dart_1/pages/profile_page.dart';
 import 'package:project_dart_1/pages/contact_page.dart';
@@ -65,6 +66,11 @@ class AppPages {
       name: AppRoutes.splashScreen,
       page: () => SplashscreenPage(),
       binding: SplashscreenBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.notification,
+      page: () => NotificationPage(),
+      binding: BottomNavPageBinding(),
     ),
   ];
 }
