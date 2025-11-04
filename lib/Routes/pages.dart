@@ -1,12 +1,17 @@
 import 'package:get/get.dart';
 import 'package:project_dart_1/Routes/routes.dart';
 import 'package:project_dart_1/bindings/btn_nav_binding.dart';
+import 'package:project_dart_1/bindings/premiere_binding.dart';
 import 'package:project_dart_1/bindings/splashscreen_binding.dart';
 import 'package:project_dart_1/pages/btn_nav_page.dart';
+import 'package:project_dart_1/pages/football_add_pages.dart';
+import 'package:project_dart_1/pages/football_edit_pages.dart';
 import 'package:project_dart_1/pages/login_api_page.dart';
 import 'package:project_dart_1/pages/calculator_page.dart';
 import 'package:project_dart_1/pages/notification_page.dart';
+import 'package:project_dart_1/pages/premiere_table_page.dart';
 import 'package:project_dart_1/pages/profile2_page.dart';
+import 'package:project_dart_1/pages/profile_google_page.dart';
 import 'package:project_dart_1/pages/profile_page.dart';
 import 'package:project_dart_1/pages/contact_page.dart';
 import 'package:project_dart_1/pages/example_page.dart';
@@ -70,6 +75,26 @@ class AppPages {
     GetPage(
       name: AppRoutes.notification,
       page: () => NotificationPage(),
+      binding: BottomNavPageBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.premiereTable,
+      page: () => PremiereTablePage(),
+      binding: PremiereBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.footballaddplayers,
+      page: () => FootballAddPages(),
+      binding: ExampleFootballplayerBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.footballeditplayers,
+      page: () => FootballEditPages(),
+      binding: ExampleFootballplayerBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.profileGoogle,
+      page: () => ProfileGooglePage(),
       binding: BottomNavPageBinding(),
     ),
   ];

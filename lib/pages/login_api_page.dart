@@ -96,6 +96,34 @@ class LoginApiPage extends StatelessWidget {
                     )),
                 const SizedBox(height: 24),
 
+                Obx(() => SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 255, 174, 68),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: controller.loginWithGoogle,
+                        child: controller.isLoading.value
+                            ? const CircularProgressIndicator(
+                                color: Colors.white,
+                                strokeWidth: 2,
+                              )
+                            : const Text(
+                                "Login Google",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.2,
+                                ),
+                              ),
+                      ),
+                    )),
+                const SizedBox(height: 24),
+
                 // 🔹 Info akun demo
                 Container(
                   padding: const EdgeInsets.all(12),

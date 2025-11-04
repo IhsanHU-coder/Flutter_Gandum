@@ -6,8 +6,10 @@ import 'package:project_dart_1/pages/calculator_page.dart';
 import 'package:project_dart_1/pages/contact_page.dart';
 import 'package:project_dart_1/pages/football_pages.dart';
 import 'package:project_dart_1/pages/notification_page.dart';
+import 'package:project_dart_1/pages/premiere_table_page.dart';
 import 'package:project_dart_1/pages/profile2_page.dart';
 import 'package:project_dart_1/pages/example_page.dart';
+import 'package:project_dart_1/pages/profile_google_page.dart';
 
 class BtnNavPage extends StatelessWidget {
   BtnNavPage({super.key});
@@ -22,6 +24,8 @@ class BtnNavPage extends StatelessWidget {
     ExamplePage(),
     FootballPages(),
     NotificationPage(),
+    PremiereTablePage(),
+    ProfileGooglePage(),
   ];
 
   @override
@@ -92,13 +96,29 @@ class BtnNavPage extends StatelessWidget {
                   },
                 ),
                 ListTile(
+                  leading: const Icon(Icons.book),
+                  title: const Text("Premiere League Page"),
+                  onTap: () {
+                    controller.changeTab(6);
+                    Get.back();
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.person),
+                  title: const Text("Profile Google Page"),
+                  onTap: () {
+                    controller.changeTab(7);
+                    Get.back();
+                  },
+                ),
+                ListTile(
                   leading: const Icon(Icons.logout, color: Colors.red),
                   title: const Text(
                     "Logout",
                     style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
                   ),
                   onTap: () {
-                    loginapicontroller.logout();
+                    loginapicontroller.logoutGoogle();
                   },
                 ),
               ],
@@ -135,6 +155,14 @@ class BtnNavPage extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
                 label: "Notification Page",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.contact_emergency),
+                label: "Premiere League Page",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: "Profile Google Page",
               ),
             ],
           ),

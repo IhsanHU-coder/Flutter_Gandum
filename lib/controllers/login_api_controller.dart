@@ -4,13 +4,28 @@ import 'package:http/http.dart' as http;
 import 'package:project_dart_1/API/login_api_api.dart';
 import 'package:project_dart_1/Routes/routes.dart';
 import 'package:project_dart_1/models/login_api_model.dart';
+import 'package:project_dart_1/pages/btn_nav_page.dart';
+import 'package:project_dart_1/pages/login_api_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 
 
 class LoginApiController extends GetxController {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  
+
+  final FirebaseAuth auth = FirebaseAuth.instance;
+final GoogleSignIn _googleSignIn = GoogleSignIn(
+  scopes: ['email'],
+);
+
+  var googleName = "".obs;
+  var googleEmail = "".obs;
+  var googlePhoto = "".obs;
+
+
   var isLoading = false.obs;
 
   // @override
@@ -19,6 +34,59 @@ class LoginApiController extends GetxController {
   //   passwordController.dispose();
   //   super.onClose();
   // }
+  @override
+  void onInit() {
+    super.onInit();
+    loadGoogleData();
+  }
+
+  Future<void> loadGoogleData() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    googleName.value = prefs.getString("google_name") ?? "";
+    googleEmail.value = prefs.getString("google_email") ?? "";
+    googlePhoto.value = prefs.getString("google_photo") ?? "";
+  }
+
+  Future<void> loginWithGoogle() async {
+    try {
+      final googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) return;
+
+      final googleAuth = await googleUser.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        idToken: googleAuth.idToken,
+        accessToken: googleAuth.accessToken,
+      );
+
+      await FirebaseAuth.instance.signInWithCredential(credential);
+
+      // ✅ Setelah login sukses
+      final prefs = await SharedPreferences.getInstance();
+
+      googleName.value = googleUser.displayName ?? "";
+      googleEmail.value = googleUser.email;
+      googlePhoto.value = googleUser.photoUrl ?? "";
+
+      await prefs.setString("google_name", googleName.value);
+      await prefs.setString("google_email", googleEmail.value);
+      await prefs.setString("google_photo", googlePhoto.value);
+      await prefs.setBool("google_logged_in", true);
+
+      Get.snackbar("Success", "Login Google sukses!");
+      Get.offAllNamed(AppRoutes.btnNav);
+    } catch (e) {
+      print("Google Sign-In Error: $e");
+      Get.snackbar("Error", e.toString());
+    }
+  }
+
+
+
+ 
+
+
 
   void loginApi() async {
     print('\n========================================');
@@ -206,35 +274,96 @@ class LoginApiController extends GetxController {
 
   void logout() async {
     print('\n========================================');
-    print('🚪 LOGOUT STARTED');
-    print('========================================');
+  print('🚪 LOGOUT API STARTED');
+  print('========================================');
 
+  try {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.clear(); // Hapus semua data login (username, token, dll)
 
-    Get.delete<LoginApiController>(force: true);
+    // Hapus data login biasa
+    await prefs.remove("username");
+    await prefs.remove("token");
+
     usernameController.clear();
     passwordController.clear();
 
     print('🧹 SharedPreferences cleared');
-    print('🔁 Redirecting to LoginApiPage...');
+    print('✅ API Logout successful');
 
-    Get.offAllNamed(AppRoutes.loginapi); 
-
+    // Kembali ke halaman login
+    Get.offAllNamed(AppRoutes.loginapi);
     Get.snackbar(
       "LOGOUT",
-      "Berhasil keluar dari akun",
+      "Logout akun berhasil",
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: Colors.orange[100],
       colorText: Colors.black,
     );
 
-    await Future.delayed(const Duration(milliseconds: 5000));
+    print('========================================');
+    print('✅ LOGOUT API COMPLETED');
+    print('========================================\n');
+  } catch (e) {
+    print('❌ API Logout Error: $e');
+    Get.snackbar(
+      "ERROR",
+      "Gagal logout API: ${e.toString()}",
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.red[100],
+      colorText: Colors.black,
+    );
+  }
+  }
+
+  Future<void> logoutGoogle() async {
+  print('\n========================================');
+  print('🚪 LOGOUT GOOGLE STARTED');
+  print('========================================');
+
+  try {
+    // Keluar dari Google Sign-In dan Firebase
+    await _googleSignIn.signOut();
+    await auth.signOut();
+
+    // Hapus data Google dari SharedPreferences
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove("google_name");
+    await prefs.remove("google_email");
+    await prefs.remove("google_photo");
+    await prefs.remove("google_logged_in");
+
+    // Reset observable
+    googleName.value = "";
+    googleEmail.value = "";
+    googlePhoto.value = "";
+
+    print('✅ Google Sign-Out success & SharedPreferences cleared');
 
     // Kembali ke halaman login
+    Get.offAllNamed(AppRoutes.loginapi);
+    Get.snackbar(
+      "LOGOUT",
+      "Logout Google berhasil",
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.orange[100],
+      colorText: Colors.black,
+    );
 
-
-    print('✅ LOGOUT COMPLETED');
+    print('========================================');
+    print('✅ LOGOUT GOOGLE COMPLETED');
     print('========================================\n');
+  } catch (e) {
+    print('❌ Google Logout Error: $e');
+    Get.snackbar(
+      "ERROR",
+      "Gagal logout Google: ${e.toString()}",
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.red[100],
+      colorText: Colors.black,
+    );
   }
+}
+
+
+  
 }

@@ -14,6 +14,8 @@ class AppRoutes{
   static const String loginapi = "/loginapi";
   static const String btnNav = "/btnNav";
   static const String notification = "/notification";
+  static const String premiereTable = "/premiereTable";
+  static const String profileGoogle = "/profileGoogle";
 
   //others here
 }

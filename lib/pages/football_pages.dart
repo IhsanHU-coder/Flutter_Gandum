@@ -5,11 +5,12 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:project_dart_1/Routes/routes.dart';
 import 'package:project_dart_1/controllers/football_controller.dart';
+import 'package:project_dart_1/pages/football_add_pages.dart';
 
 class FootballPages extends StatelessWidget {
   FootballPages({super.key});
 
-  final FootballController footballController = Get.put(FootballController());
+  final footballController = Get.find<FootballController>();
   //final footballController = Get.find<FootballController>();
 
   @override
@@ -34,6 +35,7 @@ class FootballPages extends StatelessWidget {
                   //Get.toNamed(AppRoutes.footballeditplayers);
                   //Get.to(() => FootballEditPages(index: index));
                   Get.toNamed(
+                    // AppRoutes.footballeditplayers, // route yg kamu definisikan di routes.dart
                     AppRoutes.footballeditplayers, // route yg kamu definisikan di routes.dart
                     arguments: index,
                   );
@@ -62,6 +64,7 @@ class FootballPages extends StatelessWidget {
         onPressed: () {
           // Navigate to add player
           Get.toNamed(AppRoutes.footballaddplayers);
+          // FootballAddPages();
         },
         child: Icon(Icons.add),
       ),
