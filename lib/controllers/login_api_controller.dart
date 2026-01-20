@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:project_dart_1/API/login_api_api.dart';
-import 'package:project_dart_1/Routes/routes.dart';
-import 'package:project_dart_1/models/login_api_model.dart';
-import 'package:project_dart_1/pages/btn_nav_page.dart';
-import 'package:project_dart_1/pages/login_api_page.dart';
+import 'package:flutter_gandum/API/login_api_api.dart';
+import 'package:flutter_gandum/Routes/routes.dart';
+import 'package:flutter_gandum/models/login_api_model.dart';
+import 'package:flutter_gandum/pages/btn_nav_page.dart';
+import 'package:flutter_gandum/pages/login_api_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';

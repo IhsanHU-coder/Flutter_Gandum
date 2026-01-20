@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/notification_controller.dart';
+import 'package:flutter_gandum/controllers/notification_controller.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});

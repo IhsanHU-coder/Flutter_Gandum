@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:project_dart_1/Routes/routes.dart';
+import 'package:flutter_gandum/Routes/routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashscreenController extends GetxController{

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_dart_1/Register_Page.dart';
-import 'package:project_dart_1/pages/btn_nav_page.dart';
-import 'package:project_dart_1/widgets/widget_button.dart';
-import 'package:project_dart_1/widgets/widget_textfield.dart';
+import 'package:flutter_gandum/Register_Page.dart';
+import 'package:flutter_gandum/pages/btn_nav_page.dart';
+import 'package:flutter_gandum/widgets/widget_button.dart';
+import 'package:flutter_gandum/widgets/widget_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

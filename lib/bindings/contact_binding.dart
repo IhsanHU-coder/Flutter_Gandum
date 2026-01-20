@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/contact_controller.dart';
+import 'package:flutter_gandum/controllers/contact_controller.dart';
 
 class ContactBinding extends Bindings{
   @override

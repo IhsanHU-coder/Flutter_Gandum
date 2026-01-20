@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/models/football_model.dart';
+import 'package:flutter_gandum/models/football_model.dart';
 
 class ExampleFootballplayerController extends GetxController{
   var isMobile = true.obs;

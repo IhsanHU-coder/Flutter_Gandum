@@ -1,15 +1,15 @@
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/btn_nav_controller.dart';
-import 'package:project_dart_1/controllers/calculator_controller.dart';
-import 'package:project_dart_1/controllers/contact_controller.dart';
-import 'package:project_dart_1/controllers/football_controller.dart';
-import 'package:project_dart_1/controllers/football_edit_controller.dart';
-import 'package:project_dart_1/controllers/login_api_controller.dart';
-import 'package:project_dart_1/controllers/premiere_table_controller.dart';
-import 'package:project_dart_1/controllers/profile_controller.dart';
-import 'package:project_dart_1/controllers/login_controller.dart';
-import 'package:project_dart_1/controllers/example_controller.dart';
-import 'package:project_dart_1/controllers/example_footballplayer_controller.dart';
+import 'package:flutter_gandum/controllers/btn_nav_controller.dart';
+import 'package:flutter_gandum/controllers/calculator_controller.dart';
+import 'package:flutter_gandum/controllers/contact_controller.dart';
+import 'package:flutter_gandum/controllers/football_controller.dart';
+import 'package:flutter_gandum/controllers/football_edit_controller.dart';
+import 'package:flutter_gandum/controllers/login_api_controller.dart';
+import 'package:flutter_gandum/controllers/premiere_table_controller.dart';
+import 'package:flutter_gandum/controllers/profile_controller.dart';
+import 'package:flutter_gandum/controllers/login_controller.dart';
+import 'package:flutter_gandum/controllers/example_controller.dart';
+import 'package:flutter_gandum/controllers/example_footballplayer_controller.dart';
 
 class BottomNavPageBinding extends Bindings {
   @override

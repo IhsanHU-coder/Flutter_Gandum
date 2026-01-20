@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/login_api_controller.dart';
+import 'package:flutter_gandum/controllers/login_api_controller.dart';
 
 class ProfileGooglePage extends StatefulWidget {
   const ProfileGooglePage({super.key});

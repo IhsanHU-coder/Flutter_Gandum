@@ -3,8 +3,8 @@ import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:project_dart_1/Routes/routes.dart';
-import 'package:project_dart_1/controllers/example_footballplayer_controller.dart';
+import 'package:flutter_gandum/Routes/routes.dart';
+import 'package:flutter_gandum/controllers/example_footballplayer_controller.dart';
 
 class ExampleFootballPages extends StatelessWidget {
   ExampleFootballPages({super.key});

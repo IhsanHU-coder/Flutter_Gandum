@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:project_dart_1/models/football_model.dart';
+import 'package:flutter_gandum/models/football_model.dart';
 
 class FootballController extends GetxController {
   var players = <FootballPlayer>[

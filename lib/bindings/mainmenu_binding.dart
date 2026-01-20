@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/btn_nav_controller.dart';
+import 'package:flutter_gandum/controllers/btn_nav_controller.dart';
 
 class MainmenuBinding extends Bindings{
   @override

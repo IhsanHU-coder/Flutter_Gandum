@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:project_dart_1/models/TabelModelPremiereLeague_model.dart';
+import 'package:flutter_gandum/models/TabelModelPremiereLeague_model.dart';
 
 
 class PremiereTableController extends GetxController {

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/btn_nav_controller.dart';
-import 'package:project_dart_1/controllers/login_api_controller.dart';
-import 'package:project_dart_1/pages/calculator_page.dart';
-import 'package:project_dart_1/pages/contact_page.dart';
-import 'package:project_dart_1/pages/football_pages.dart';
-import 'package:project_dart_1/pages/notification_page.dart';
-import 'package:project_dart_1/pages/premiere_table_page.dart';
-import 'package:project_dart_1/pages/profile2_page.dart';
-import 'package:project_dart_1/pages/example_page.dart';
-import 'package:project_dart_1/pages/profile_google_page.dart';
+import 'package:flutter_gandum/controllers/btn_nav_controller.dart';
+import 'package:flutter_gandum/controllers/login_api_controller.dart';
+import 'package:flutter_gandum/pages/calculator_page.dart';
+import 'package:flutter_gandum/pages/contact_page.dart';
+import 'package:flutter_gandum/pages/football_pages.dart';
+import 'package:flutter_gandum/pages/notification_page.dart';
+import 'package:flutter_gandum/pages/premiere_table_page.dart';
+import 'package:flutter_gandum/pages/profile2_page.dart';
+import 'package:flutter_gandum/pages/example_page.dart';
+import 'package:flutter_gandum/pages/profile_google_page.dart';
 
 class BtnNavPage extends StatelessWidget {
   BtnNavPage({super.key});

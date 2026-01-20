@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/login_controller.dart';
+import 'package:flutter_gandum/controllers/login_controller.dart';
 
 class LoginBinding extends Bindings{
   @override

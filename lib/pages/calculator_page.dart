@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/Routes/routes.dart';
-import 'package:project_dart_1/controllers/calculator_controller.dart';
-import 'package:project_dart_1/widgets/widget_button.dart';
-import 'package:project_dart_1/widgets/widget_textfield.dart';
+import 'package:flutter_gandum/Routes/routes.dart';
+import 'package:flutter_gandum/controllers/calculator_controller.dart';
+import 'package:flutter_gandum/widgets/widget_button.dart';
+import 'package:flutter_gandum/widgets/widget_textfield.dart';
 
 class CalculatorPage extends StatelessWidget {
 
