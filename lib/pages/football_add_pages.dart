@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/football_controller.dart';
-import 'package:project_dart_1/models/football_model.dart';
+import 'package:flutter_gandum/controllers/football_controller.dart';
+import 'package:flutter_gandum/models/football_model.dart';
 
 class FootballAddPages extends StatelessWidget {
   final int? index; // null kalau tambah baru

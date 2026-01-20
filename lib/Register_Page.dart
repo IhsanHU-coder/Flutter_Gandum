@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_dart_1/Main_Menu.dart';
+import 'package:flutter_gandum/Main_Menu.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

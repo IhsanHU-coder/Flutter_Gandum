@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:project_dart_1/Login_Page.dart';
+import 'package:flutter_gandum/Login_Page.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/Routes/pages.dart';
-import 'package:project_dart_1/Routes/routes.dart';
-import 'package:project_dart_1/controllers/contact_controller.dart';
-import 'package:project_dart_1/controllers/football_controller.dart';
-import 'package:project_dart_1/controllers/login_controller.dart';
-import 'package:project_dart_1/controllers/splashscreen_controller.dart';
-import 'package:project_dart_1/pages/calculator_page.dart';
+import 'package:flutter_gandum/Routes/pages.dart';
+import 'package:flutter_gandum/Routes/routes.dart';
+import 'package:flutter_gandum/controllers/contact_controller.dart';
+import 'package:flutter_gandum/controllers/football_controller.dart';
+import 'package:flutter_gandum/controllers/login_controller.dart';
+import 'package:flutter_gandum/controllers/splashscreen_controller.dart';
+import 'package:flutter_gandum/pages/calculator_page.dart';
 
 void main() {
   Get.put(LoginController()); // ini global, bisa diakses Get.find di manapun

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_dart_1/controllers/calculator_controller.dart';
-import 'package:project_dart_1/controllers/contact_controller.dart';
-import 'package:project_dart_1/controllers/football_controller.dart';
-import 'package:project_dart_1/controllers/home_controller.dart';
-import 'package:project_dart_1/controllers/login_controller.dart';
-import 'package:project_dart_1/pages/calculator_page.dart';
-import 'package:project_dart_1/pages/contact_page.dart';
-import 'package:project_dart_1/pages/football_pages.dart';
-import 'package:project_dart_1/pages/profile_page.dart';
+import 'package:flutter_gandum/controllers/calculator_controller.dart';
+import 'package:flutter_gandum/controllers/contact_controller.dart';
+import 'package:flutter_gandum/controllers/football_controller.dart';
+import 'package:flutter_gandum/controllers/home_controller.dart';
+import 'package:flutter_gandum/controllers/login_controller.dart';
+import 'package:flutter_gandum/pages/calculator_page.dart';
+import 'package:flutter_gandum/pages/contact_page.dart';
+import 'package:flutter_gandum/pages/football_pages.dart';
+import 'package:flutter_gandum/pages/profile_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
